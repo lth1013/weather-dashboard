@@ -61,14 +61,14 @@ document.getElementById("search-button").addEventListener("click", (event) => {
             console.log(forecastArray)
             
             document.getElementById("forecast").innerHTML = "";
-            
+
             forecastArray.forEach(day => {
                 document.getElementById('forecast').innerHTML += `
                   <div class="row">
                     <div class="col s12 m7">
                       <div class="card">
                         <div class="card-image">
-                          <img src="http://openweathermap.org/img/w/${day.weather[0].icon}.png">
+                          <img class="forecast-icon" src="http://openweathermap.org/img/w/${day.weather[0].icon}.png">
                           <span class="card-title">${moment.unix(day.dt).format("MM/DD/YYYY")}</span>
                         </div>
                         <div class="card-content">
@@ -84,3 +84,4 @@ document.getElementById("search-button").addEventListener("click", (event) => {
           });
       });
   });
+  
