@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
       let link = document.createElement("a");
       link.href = "#";
       link.textContent = city;
+      link.style.fontSize = "20px";
       link.addEventListener("click", () => {
         searchWeather(city);
       });
