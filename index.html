@@ -1,41 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Weather Dashboard</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link rel="stylesheet" href="./assets/css/style.css">
-    </head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Weather Dashboard</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
     <div class="container">
-        <div class="row">
-            <h1>Weather Dashboard</h1>
-        </div>
-        <div class="row">
-            <input value="" id="city" type="text" class="validate">
-            <label for="city">City</label>
-        </div>
-        <a id="search-button" class="btn">Search</a>
+      <div class="row">
+        <h1>Weather Dashboard</h1>
+      </div>
+      <div class="row">
+        <input value="" id="city" type="text" class="validate" />
+        <label for="city">City</label>
+      </div>
+      <a id="search-button" class="btn">Search</a>
     </div>
     <div class="sidebar">
-  <ul id="city-list"></ul>
-</div>
+      <h2>Search History</h2>
+      <ul id="city-list"></ul>
+    </div>
     <div class="row">
-        <h2 class="weatherHeader">Current Weather: </h2>
-         <div id="weather"></div>
-     </div>
-     <div class="row">
-        <h2 class="forecastHeader">Five-Day Forecast: </h2>
-        <div id="forecast" class="row"></div>
-     </div>
-</div>
+      <h2 class="weatherHeader">Current Weather:</h2>
+      <div id="weather"></div>
+    </div>
+    <div class="row">
+      <h2 class="forecastHeader">Five-Day Forecast:</h2>
+      <div id="forecast" class="row"></div>
+    </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js" integrity="sha512-bPh3uwgU5qEMipS/VOmRqynnMXGGSRv+72H/N260MQeXZIK4PG48401Bsby9Nq5P5fz7hy5UGNmC/W1Z51h2GQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
-<script src="./assets/js/script.js"></script>
-
-</body>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js"
+      integrity="sha512-bPh3uwgU5qEMipS/VOmRqynnMXGGSRv+72H/N260MQeXZIK4PG48401Bsby9Nq5P5fz7hy5UGNmC/W1Z51h2GQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+  </body>
 </html>
-
