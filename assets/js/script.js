@@ -50,9 +50,35 @@ document.getElementById("search-button").addEventListener("click", (event) => {
                   <p class="card-text">UV Index: ${currentUVIHTML}</p>
               </div>
             </div>`;
+
+            let forecastArray = []
+            let weatherday1 = weatherResponse.data.daily[1]
+            let weatherday2 = weatherResponse.data.daily[2]
+            let weatherday3 = weatherResponse.data.daily[3]
+            let weatherday4 = weatherResponse.data.daily[4]
+            let weatherday5 = weatherResponse.data.daily[5]
+            forecastArray.push(weatherday1, weatherday2, weatherday3, weatherday4, weatherday5)
+            console.log(forecastArray)
+            
+            forecastArray.forEach(day => {
+                document.getElementById('forecast').innerHTML += `
+                  <div class="row">
+                    <div class="col s12 m7">
+                      <div class="card">
+                        <div class="card-image">
+                          <img src="http://openweathermap.org/img/w/${day.weather[0].icon}.png">
+                          <span class="card-title">${moment.unix(day.dt).format("MM/DD/YYYY")}</span>
+                        </div>
+                        <div class="card-content">
+                          <p>Temp: ${day.temp.day} °F</p>
+                          <p>Humidity: ${day.humidity}%</p>
+                          <p>Wind Speed: ${day.wind_speed} MPH</p>
+                          <p>UV Index: ${day.uvi}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>`;
+              });
           });
       });
   });
-
-  
-  
