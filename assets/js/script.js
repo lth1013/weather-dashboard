@@ -60,6 +60,8 @@ document.getElementById("search-button").addEventListener("click", (event) => {
             forecastArray.push(weatherday1, weatherday2, weatherday3, weatherday4, weatherday5)
             console.log(forecastArray)
             
+            document.getElementById("forecast").innerHTML = "";
+            
             forecastArray.forEach(day => {
                 document.getElementById('forecast').innerHTML += `
                   <div class="row">
