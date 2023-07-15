@@ -14,7 +14,6 @@ document.addEventListener("DOMContentLoaded", () => {
       link.addEventListener("click", () => {
         searchWeather(city);
       });
-
       listItem.appendChild(link);
       cityList.appendChild(listItem);
     });
@@ -37,7 +36,6 @@ document.addEventListener("DOMContentLoaded", () => {
             let currentTemp = weatherResponse.data.current.temp;
             let currentHumidity = weatherResponse.data.current.humidity;
             let currentWindSpeed = weatherResponse.data.current.wind_speed;
-            let currentUVI = weatherResponse.data.current.uvi;
             let currentIcon = weatherResponse.data.current.weather[0].icon;
             let currentIconURL = `http://openweathermap.org/img/w/${currentIcon}.png`;
             let currentCityName = forecastResponse.data.city.name;
@@ -45,19 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
             let currentDateFormatted = moment
               .unix(currentDate)
               .format("MM/DD/YYYY");
-            let currentUVIColor = "";
-            if (currentUVI < 3) {
-              currentUVIColor = "green";
-            } else if (currentUVI < 6) {
-              currentUVIColor = "yellow";
-            } else if (currentUVI < 8) {
-              currentUVIColor = "orange";
-            } else if (currentUVI < 11) {
-              currentUVIColor = "red";
-            } else {
-              currentUVIColor = "purple";
-            }
-            let currentUVIHTML = `<span class="badge badge-pill" style="background-color: ${currentUVIColor}; color: black">${currentUVI}</span>`;
+            
 
             document.getElementById("weather").innerHTML = `<div class="card">
                 <div class="card-body">
@@ -65,7 +51,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     <p class="card-text">Temperature: ${currentTemp} °F</p>
                     <p class="card-text">Humidity: ${currentHumidity}%</p>
                     <p class="card-text">Wind Speed: ${currentWindSpeed} MPH</p>
-                    <p class="card-text">UV Index: ${currentUVIHTML}</p>
                 </div>
               </div>`;
 
@@ -86,20 +71,6 @@ document.addEventListener("DOMContentLoaded", () => {
             document.getElementById("forecast").innerHTML = "";
 
             forecastArray.forEach((day) => {
-              let currentUVIColor2 = "";
-              if (day.uvi < 3) {
-                currentUVIColor2 = "green";
-              } else if (day.uvi < 6) {
-                currentUVIColor2 = "yellow";
-              } else if (day.uvi < 8) {
-                currentUVIColor2 = "orange";
-              } else if (day.uvi < 11) {
-                currentUVIColor2 = "red";
-              } else {
-                currentUVIColor2 = "purple";
-              }
-              let currentUVIHTML2 = `<span class="badge badge-pill" style="background-color: ${currentUVIColor}; color: black">${day.uvi}</span>`;
-
               document.getElementById("forecast").innerHTML += `
                     <div class="row">
                       <div class="col s12 m7">
@@ -116,7 +87,6 @@ document.addEventListener("DOMContentLoaded", () => {
                             <p>Temp: ${day.temp.day} °F</p>
                             <p>Humidity: ${day.humidity}%</p>
                             <p>Wind Speed: ${day.wind_speed} MPH</p>
-                            <p>UV Index: ${currentUVIHTML2}</p>
                           </div>
                         </div>
                       </div>
